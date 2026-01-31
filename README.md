@@ -59,8 +59,8 @@ frontend-react/
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/indigo-productos-ventas.git
-cd indigo-productos-ventas
+git clone https://github.com/Brandonvilla10/indiGo.git
+cd indigo
 ```
 
 ### 2. Backend (Laravel)
@@ -181,7 +181,7 @@ npm run test
 - TailwindCSS
 - React Hook Form
 
-## 👤 Usuarios de Prueba
+##  Usuarios de Prueba
 
 Después de ejecutar los seeders:
 
@@ -190,18 +190,7 @@ Email: admin@indigo.com
 Password: password
 ```
 
-## 📝 Planteamiento Lógico de la Solución
-
-### 1. Arquitectura Hexagonal
-
-El backend sigue el patrón de arquitectura hexagonal (puertos y adaptadores):
-
-- **Capa de Dominio**: Models, DTOs
-- **Capa de Aplicación**: Services (casos de uso)
-- **Capa de Infraestructura**: Repositories, Controllers
-- **Puertos**: Interfaces (Contracts)
-
-### 2. Flujo de Datos
+### 1. Flujo de Datos
 
 ```
 Request → Controller → Service → Repository → Model → Database
@@ -209,51 +198,9 @@ Request → Controller → Service → Repository → Model → Database
 Response ← Resource ← Controller ← Service ← Repository
 ```
 
-### 3. Principios Aplicados
 
-- **SOLID**: Single Responsibility, Dependency Inversion
-- **DRY**: Don't Repeat Yourself
-- **Separation of Concerns**: Capas bien definidas
-- **Repository Pattern**: Abstracción de acceso a datos
-- **Service Pattern**: Lógica de negocio centralizada
 
-## 🔒 Seguridad
 
-- Validación de datos en requests
-- Protección CSRF
-- Sanitización de inputs
-- Autenticación basada en tokens
-- Middleware de autenticación
-- Rate limiting en API
 
-## 📈 Mejoras Futuras
 
-- [ ] Paginación en listados
-- [ ] Filtros avanzados
-- [ ] Exportar reportes a PDF/Excel
-- [ ] Dashboard con gráficos
-- [ ] Notificaciones en tiempo real
-- [ ] Roles y permisos
-- [ ] Auditoría de cambios
-- [ ] API de terceros (pagos)
 
-## 🤝 Contribuir
-
-1. Fork el proyecto
-2. Crea una rama (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -m 'Agregar nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-MIT License
-
-## 👨‍💻 Autor
-
-Tu Nombre - [GitHub](https://github.com/tu-usuario)
-
----
-
-**Desarrollado con ❤️ para demostración de habilidades Full Stack**
-"# indiGo" 

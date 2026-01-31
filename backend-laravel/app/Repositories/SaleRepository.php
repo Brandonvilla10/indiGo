@@ -29,7 +29,8 @@ class SaleRepository implements SaleRepositoryInterface
     public function getSalesByDateRange(string $startDate, string $endDate): Collection
     {
         return Sale::with(['user', 'items.product'])
-            ->whereBetween('sale_date', [$startDate, $endDate])
+            ->whereDate('sale_date', '>=', $startDate)
+            ->whereDate('sale_date', '<=', $endDate)
             ->orderBy('sale_date', 'desc')
             ->get();
     }

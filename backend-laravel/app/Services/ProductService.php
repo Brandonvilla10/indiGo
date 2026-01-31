@@ -41,7 +41,7 @@ class ProductService
         }
 
         if (isset($data['image']) && is_file($data['image'])) {
-            // Delete old image
+            
             if ($product->image) {
                 Storage::disk('public')->delete($product->image);
             }
@@ -59,7 +59,7 @@ class ProductService
             return false;
         }
 
-        // Delete image if exists
+       
         if ($product->image) {
             Storage::disk('public')->delete($product->image);
         }

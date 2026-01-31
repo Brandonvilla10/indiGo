@@ -77,27 +77,6 @@ class SaleService
         $totalRevenue = $sales->sum('total');
         $averageTicket = $totalSales > 0 ? $totalRevenue / $totalSales : 0;
 
-        // Top products sold
-        $topProducts = [];
-        foreach ($sales as $sale) {
-            foreach ($sale->items as $item) {
-                $productId = $item->product_id;
-                if (!isset($topProducts[$productId])) {
-                    $topProducts[$productId] = [
-                        'product' => $item->product->name,
-                        'quantity' => 0,
-                        'revenue' => 0,
-                    ];
-                }
-                $topProducts[$productId]['quantity'] += $item->quantity;
-                $topProducts[$productId]['revenue'] += $item->subtotal;
-            }
-        }
-
-        // Sort by quantity sold
-        usort($topProducts, fn($a, $b) => $b['quantity'] <=> $a['quantity']);
-        $topProducts = array_slice($topProducts, 0, 10);
-
         return [
             'start_date' => $startDate,
             'end_date' => $endDate,
@@ -106,7 +85,6 @@ class SaleService
                 'total_revenue' => round($totalRevenue, 2),
                 'average_ticket' => round($averageTicket, 2),
             ],
-            'top_products' => $topProducts,
             'sales' => $sales,
         ];
     }
